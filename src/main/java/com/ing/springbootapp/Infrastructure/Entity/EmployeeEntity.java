@@ -11,19 +11,19 @@ import javax.persistence.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "CUSTOMER")
-public class CustomerEntity {
+@Entity(name = "EMPLOYEE")
+public class EmployeeEntity {
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "CUST_NAME")
+    @Column(name = "EMP_NAME")
     private String name;
 
-    @Column(name = "CUST_ADDRESS")
+    @Column(name = "EMP_ADDRESS")
     private String address;
 
-    @Column(name = "CUST_JOB")
+    @Column(name = "EMP_JOB")
     private String job;
 }
