@@ -13,5 +13,5 @@ public class Employee {
     private long id;
     private String name;
     private String address;
-    private String job;
+    private Job job;
 }

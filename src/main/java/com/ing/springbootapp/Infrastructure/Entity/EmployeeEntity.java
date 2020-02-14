@@ -1,5 +1,6 @@
 package com.ing.springbootapp.Infrastructure.Entity;
 
+import com.ing.springbootapp.Core.Job;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,7 +12,8 @@ import javax.persistence.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "EMPLOYEE")
+@Entity
+@Table(name = "EMPLOYEE")
 public class EmployeeEntity {
     @Id
     @Column(name = "ID")
@@ -24,6 +26,7 @@ public class EmployeeEntity {
     @Column(name = "EMP_ADDRESS")
     private String address;
 
-    @Column(name = "EMP_JOB")
-    private String job;
+    @ManyToOne
+    @JoinColumn(name = "EMP_JOB_ID", referencedColumnName = "JOB_ID")
+    private JobEntity jobEntity;
 }
